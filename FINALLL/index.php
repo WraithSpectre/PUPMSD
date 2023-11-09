@@ -30,8 +30,6 @@
                     <li><a href="#">Appointments</a></li>
                     <li><a href="#">Inventory</a></li>
                     <li><a href="#">Forms</a></li>
-                    <li><a href="">HDF</a></li>
-                    <li><a href="">PUPMSD</a></li>
                     <li><a href ="logout.php" onclick="return confirm('Are your sure you want to logout?');" class="user" style="text-decoration: none;"><i class="fa-solid fa-right-from-bracket"></i>Logout</a>
                     </li>
                 </ul>

@@ -13,7 +13,7 @@
         <nav>
             <div class="container">
                 <div id="logo">
-                    <a href="#"><img src="images/pup-logo.png" alt="logo"><h1>PUPMSD</h1></a>
+                    <a href="#"><img src="pup-logo.png" alt="logo"><h1>PUPMSD</h1></a>
                 </div>
                 <ul>
                     <li><a href="#">Home</a></li>

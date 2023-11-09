@@ -1,3 +1,6 @@
+<?php
+include("connect.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,8 +24,8 @@
         <input id="cpass" type="password" name="cpass" placeholder="Confirm Your Password" required/>
         <label for="specialization">Specialization:</label>
         <select name="specialization">
-          <option value="1">Admin</option>
-          <option value="2">Medical Staff</option>
+          <option value="admin">Admin</option>
+          <option value="md staff">Medical Staff</option>
         </select>
         <input type="submit" name="submit" value="Register" class="form-btn"/>
       </form>

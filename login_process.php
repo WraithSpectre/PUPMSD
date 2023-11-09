@@ -1,4 +1,3 @@
-<head>
 <?php
 session_start();
 
@@ -12,41 +11,47 @@ $pass = $_POST['pass'];
 
 echo "You attempted to login with " . $email . " and " . $pass. "<br>";
 
-$stmt = $mysqli->prepare("SELECT user_id, email, pass FROM medical_staff where email = ?");
+$stmt = $mysqli->prepare("SELECT user_id, email, pass, specialization FROM medical_staff where email = ?");
 $stmt->bind_param("s", $email);
+echo "Email: " . $email . "<br>";
 
 $stmt->execute();
 $stmt->store_result();
 
-$stmt->bind_result($userid, $unane, $pw);
+$stmt->bind_result($userid, $email, $stored_password, $specialization);
 
 if ($stmt->num_rows == 1) {
     echo "I found one person with that email.<br>";
-    $stmt->fetch();
-    if (password_verify($pass, $pw)){
-        echo "The Password Matches";
-        echo "Login Sucess<br>";;
-        $_SESSION['uname'] = $email;
-         $_SESSION['userid'] = $userid;
-         header('location: admin/home.php');
-    }
-    else {
-        $_SESSION = [];
-         session_destroy();
-    }
-}
 
-else {
+    if ($stmt->fetch() && password_verify($pass, $stored_password)) {
+        echo "The Password Matches";
+        echo "Login Success<br>";
+
+        $_SESSION['email'] = $email;
+        $_SESSION['userid'] = $userid;
+
+        ob_end_clean();
+
+        if ($specialization === "admin") {
+            header("Location: admin/home.php");
+        } elseif ($specialization === "md staff") {
+            header("Location: md_staff/main.php");
+        } else {
+            header("Location: index.php");
+        }
+
+        exit;
+    } else {
+        $_SESSION = [];
+        session_destroy();
+        header("Location: index.php");
+        exit;
+    }
+} else {
     $_SESSION = [];
     session_destroy();
+    header("Location: index.php");
+    exit;
 }
-echo "login failed!<br>";
-
-echo "SESSION Variable = <br>";
-echo "<pre>";
-print_r($_SESSION);
-echo "<pre>";
-
-echo "<br><a href = 'index.php'> Return to Main Menu</a>";
 
 ?>

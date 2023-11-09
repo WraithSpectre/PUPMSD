@@ -1,5 +1,6 @@
 <?php
 include 'connect.php';
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +18,7 @@ include 'connect.php';
       <h2>PUP - MSD Medical Staff Module Login</h2>
       <h6>Sign in to start your session<h6>
 
-      <form action="login_process.php">
+      <form action="login_process.php" method="post">
         <input
  
 type="email" name="email" placeholder="Email" required/>

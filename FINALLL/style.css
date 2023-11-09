@@ -1,0 +1,189 @@
+/* Reset some default styles for cross-browser consistency */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set a background color and text color for the entire page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Style the header and navigation bar */
+header {
+    background-color: #fff;
+    padding: 20px;
+    height: 80px;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+#logo {
+    float: left;
+    flex: 1;
+}
+
+#logo h1 {
+    font-size: 32px;
+}
+#logo a{
+  display: flex;
+  color: #800000;
+  align-items: center;
+  text-decoration: none;
+}
+#logo img{
+  width: 45px;
+  margin-right: 10px;
+}
+ul{
+  list-style: none;
+  display: flex;
+  margin-right: 0px;
+  float: right;
+}
+ul li{
+  padding: 10px 20px;
+  position: relative;
+}
+ul li a{
+  font-size: 20px;
+  color: #808080;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+ul li a:after{
+  content: "";
+  position: absolute;
+  background-color: #800000;
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: 0;
+  transition: 0.3s;
+}
+ul li a:hover{
+  color: #800000;
+}
+ul li a:hover:after{
+  width: 100%;
+}
+.dropdown-menu{
+  display: none;
+}
+ul li:hover .dropdown-menu{
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background-color: #fff;
+}
+ul li:hover .dropdown-menu ul{
+  display: block;
+  margin: 10px;
+}
+ul li:hover .dropdown-menu ul li{
+  width: 150px;
+  padding: 10px;
+}
+
+/* Style the hero section */
+#hero {
+    background-image: url('hero-background.jpg');
+    background-size: cover;
+    text-align: center;
+    padding: 100px 0;
+}
+
+#hero h2 {
+    font-size: 36px;
+    color: #333;
+}
+
+#hero p {
+    font-size: 18px;
+    margin: 20px 0;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Style the features section */
+#features {
+    background-color: #fff;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.feature {
+    display: inline-block;
+    margin: 0 20px;
+}
+
+.feature img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.feature h3 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+/* Style the about section */
+#about {
+    background-color: #f4f4f4;
+    padding: 50px 0;
+    text-align: center;
+}
+
+/* Style the contact section */
+#contact {
+    background-color: #800000;
+    color: #fff;
+    padding: 50px 0;
+    text-align: center;
+}
+
+#contact form {
+    text-align: left;
+}
+
+#contact input,
+#contact textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+#contact button {
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Style the footer */
+footer {
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+    padding: 10px 0;
+}
